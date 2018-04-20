@@ -1,6 +1,6 @@
 package dotify.core;
 
-public enum ShapeType {
+public enum DotifyShape {
     DOT,
     RECTANGLE
 }

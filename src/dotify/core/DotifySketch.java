@@ -1,14 +1,49 @@
 package dotify.core;
 
-public interface DotifySketch {
-    void start();
-    void pause();
-    void resume();
-    void update(float dt);
-    void draw(/*TODO Graphics */);
+public class DotifySketch {
+    private boolean isRunning = false;
 
-    void setPopStrategy();
-    void setRenderer();
-    void setGrid();
-    void setLooping();
+    public void start() {
+        isRunning = true;
+        // Reset grid
+    }
+
+    public void pause() {
+        isRunning = false;
+    }
+
+    public void resume() {
+        isRunning = true;
+    }
+
+    public void update(float dt) {
+        if(!isRunning) return;
+
+        // Calculate how many pops should be made this frame.
+
+        // Get all popables from the grid.
+
+        // Calculate random indices of cells that should be popped.
+
+        // Pop all of these cells.
+
+        // Add all popped cells to the animation list (fifo).
+    }
+
+    public void draw(/*TODO Graphics */) {
+        // Render pending animations.
+
+        // Render all active cells that were not already rendered by an animation.
+    }
+
+    public void setPopStrategy() {
+
+    }
+
+    /*
+    public void setRenderer();
+
+    public void setGrid();
+
+    public void setLooping();*/
 }

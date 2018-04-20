@@ -1,4 +1,4 @@
 package dotify.core;
 
-public interface DotifyCamera {
+public class DotifyCamera {
 }
