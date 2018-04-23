@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.ClosePath?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.LineTo?>
+<?import javafx.scene.shape.MoveTo?>
+<?import javafx.scene.shape.Path?>
+
+<?import dotify.control.DotifyAudioButton?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dotify.play.PlayScreen">
+   <center>
+      <Pane id="content" style="-fx-background-color: #2A2A2A;" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas id="sketchCanvas" height="300.0" width="600.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Pane>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="51.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #2A2A2A;" BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <Line id="freqBand0" endY="50.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand1" endY="5.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand2" endY="30.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand3" endY="15.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand4" endY="40.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <DotifyAudioButton id="audioBtn">
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </DotifyAudioButton>
+            <Line id="freqBand5" endY="45.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand6" endY="5.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand7" endY="25.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand8" endY="10.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            <Line id="freqBand9" endY="35.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" top="30.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox id="headerBar" alignment="CENTER_LEFT" prefHeight="50.0" style="-fx-background-color: #202020;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView id="headerLogo" fitHeight="150.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/img/dotify_logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.ClosePath?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.LineTo?>
+<?import javafx.scene.shape.MoveTo?>
+<?import javafx.scene.shape.Path?>
+
+<fx:root maxHeight="60.0" maxWidth="60.0" prefHeight="60.0" prefWidth="60.0" type="javafx.scene.layout.StackPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Arc fill="#ffffff00" length="360.0" radiusX="30.0" radiusY="30.0" stroke="#19b4a44a" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
+        <Arc id="progressBar" fill="#ffffff00" length="270.0" nodeOrientation="RIGHT_TO_LEFT" radiusX="30.0" radiusY="30.0" startAngle="90.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" StackPane.alignment="TOP_RIGHT">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></Arc>
+        <HBox id="stopIcon" alignment="CENTER" spacing="6.0" visible="false">
+            <children>
+                <Line id="freqBand3" endY="15.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                <Line id="freqBand3" endY="15.0" startY="-5.0" stroke="#19b4a4" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+            </children>
+        </HBox>
+        <Path id="playIcon" fill="#19b4a4" stroke="#19b4a4" strokeLineCap="ROUND" strokeWidth="3.0">
+            <elements>
+                <MoveTo x="20.0" />
+                <LineTo x="3.0" y="-10.0" />
+                <LineTo x="3.0" y="10.0" />
+                <ClosePath />
+            </elements>
+            <StackPane.margin>
+                <Insets left="8.0" top="1.0" />
+            </StackPane.margin>
+        </Path>
+    </children>
+</fx:root>
