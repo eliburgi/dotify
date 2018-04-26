@@ -1,7 +1,5 @@
 package dotify.core.grid;
 
-import dotify.core.DotifyShape;
-
 import java.util.List;
 
 public interface DotifyGrid {

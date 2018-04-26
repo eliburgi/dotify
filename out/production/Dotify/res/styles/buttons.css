@@ -1,0 +1,8 @@
+.button-rounded {
+    -fx-background-color:  #19b4a4;
+    -fx-background-radius: 100;
+}
+
+.button-rounded:hover {
+    -fx-background-color:  #15988B;
+}

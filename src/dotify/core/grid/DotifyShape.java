@@ -1,4 +1,4 @@
-package dotify.core;
+package dotify.core.grid;
 
 public enum DotifyShape {
     DOT,

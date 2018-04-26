@@ -10,12 +10,13 @@ import javafx.scene.shape.Arc;
 import java.io.IOException;
 
 public class DotifyAudioButton extends StackPane {
-    public enum State {PLAYING, STOPPED, REPLAY}
+    public enum State {PLAY, STOP, REPLAY}
 
     private State state;
     private double progress;
     private Node stopIcon;
     private Node playIcon;
+    private Node replayIcon;
     private Arc progressBar;
 
     public DotifyAudioButton() {
@@ -30,31 +31,37 @@ public class DotifyAudioButton extends StackPane {
         }
         stopIcon = lookup("#stopIcon");
         playIcon = lookup("#playIcon");
+        replayIcon = lookup("#replayIcon");
         progressBar = (Arc) lookup("#progressBar");
+
+        widthProperty().addListener((o, oldVal, newVal) -> progressBar.setCenterX(newVal.doubleValue() / 2));
+        heightProperty().addListener((o, oldVal, newVal) -> progressBar.setCenterY(newVal.doubleValue() / 2));
 
         setOnMouseClicked(e -> toggle());
         setAlignment(Pos.CENTER);
         setWidth(60);
         setHeight(60);
         setMaxSize(60, 60);
-        setState(State.STOPPED);
+        setState(State.PLAY);
         setProgress(0.0);
     }
 
     private void toggle() {
-        if (state == State.PLAYING) {
-            setState(State.STOPPED);
-        } else if (state == State.STOPPED) {
-            setState(State.PLAYING);
+        if (state == State.PLAY) {
+            setState(State.STOP);
+        } else if (state == State.STOP) {
+            setState(State.PLAY);
         }
-        double newProgress = progress + 0.1;
-        if(newProgress > 1.0) newProgress = 0.0;
+        double newProgress = progress + 0.05;
+        if (newProgress > 1.05) newProgress = 0.0;
         setProgress(newProgress);
     }
 
     public void setProgress(double progress) {
-        if(progress < 0.0 || progress > 1.0) return;
+        if (progress > 1.0) progress = 1.0;
+        else if (progress < 0.0) progress = 0.0;
         this.progress = progress;
+        if(this.progress == 1.0) setState(State.REPLAY);
         updateProgressUi();
     }
 
@@ -64,16 +71,19 @@ public class DotifyAudioButton extends StackPane {
     }
 
     private void updateProgressUi() {
-        progressBar.setLength(progress * 360.0);
+        progressBar.setLength(-progress * 360.0);
     }
 
     private void updateButtonUi() {
-        if (state == State.PLAYING) {
+        playIcon.setVisible(false);
+        stopIcon.setVisible(false);
+        replayIcon.setVisible(false);
+        if (state == State.PLAY) {
             playIcon.setVisible(true);
-            stopIcon.setVisible(false);
-        } else if (state == State.STOPPED) {
-            playIcon.setVisible(false);
+        } else if (state == State.STOP) {
             stopIcon.setVisible(true);
+        } else {
+            replayIcon.setVisible(true);
         }
     }
 }

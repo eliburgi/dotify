@@ -2,6 +2,7 @@ package dotify.core;
 
 import com.sun.istack.internal.NotNull;
 import dotify.core.grid.DotifyGrid;
+import dotify.core.grid.DotifyShape;
 import javafx.scene.image.Image;
 
 public final class Dotify {
